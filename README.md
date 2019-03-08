@@ -1,29 +1,7 @@
-# hello-vue-cli
+## hello-vue
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- 组件的基础使用
+- 父子组件传值
+- 兄弟组件传值
+- 混入
+- 未完待续 ...
