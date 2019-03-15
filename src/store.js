@@ -14,7 +14,7 @@ export default new Vuex.Store({
   },
   getters: {
     countPlus: state => {
-      return state.count +1
+      return state.count + 1;
     }
   },
   mutations: {
@@ -44,7 +44,8 @@ export default new Vuex.Store({
       await dispatch("changeAge", userInfo.age).then(() => {
         console.log("年龄更新完毕");
       });
-      commit("changeGender", userInfo.gender);
+      await commit("changeGender", userInfo.gender);
+      dispatch("changeName", userInfo.name);
     }
   }
 });

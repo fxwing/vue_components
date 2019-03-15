@@ -1,6 +1,7 @@
 <template>
   <div>
     <div>{{msg}}</div>
+    <button @click="handleSync">测试.sync</button>
   </div>
 </template>
 
@@ -24,6 +25,10 @@ export default {
       console.log(data);
     });
   },
-  methods: {}
+  methods: {
+    handleSync() {
+      this.$emit("update:isShow", false);
+    }
+  }
 };
 </script>

@@ -5,13 +5,13 @@
     </div>
     <button @click="handleMixinsClick">混入</button>
     <div>{{userInfo.name}}</div>
-    <button @click="changeName('zs')">更改姓名</button>
     <div>{{userInfo.gender}}</div>
     <div>{{userInfo.age}}</div>
+    <button @click="changeName('ww')">更改姓名</button>
+    <button @click="changeGenderAge">三秒后更改全部个人信息</button>
     <div>vuex getter ==> {{countPlus}}</div>
-    <button @click="changeGenderAge">三秒后更改年龄和性别</button>
     <one msg="这是one组件"  @oneToHome="getOneData" ref="one" />
-    <two msg="这是two组件" />
+    <two msg="这是two组件"  :isShow.sync="isShow" v-show="isShow" />
   </div>
 </template>
 
@@ -29,6 +29,11 @@ export default {
     one,
     two
   },
+  data() {
+    return {
+      isShow: true
+    };
+  },
   computed: {
     ...mapState({
       userInfo: state => state.userInfo
@@ -38,10 +43,7 @@ export default {
   mounted() {
     console.log(this.userInfo);
     // 父传子
-    this.$refs["one"].$emit(
-      "homeToOne",
-      "父组件调用子组件方法传值 home => one"
-    );
+    this.$refs["one"].$emit("homeToOne", "父组件给子组件传值 home => one");
   },
   methods: {
     // 获取子传父的数据
@@ -51,6 +53,7 @@ export default {
     ...mapActions(["changeName", "changeGender"]),
     changeGenderAge() {
       this.changeGender({
+        name: "zs",
         age: 27,
         gender: "女"
       });
