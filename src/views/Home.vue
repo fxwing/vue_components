@@ -12,12 +12,14 @@
     <div>vuex getter ==> {{countPlus}}</div>
     <one msg="这是one组件"  @oneToHome="getOneData" ref="one" />
     <two msg="这是two组件"  :isShow.sync="isShow" v-show="isShow" />
+    <three v-model="three" />
   </div>
 </template>
 
 <script>
 import one from "../components/one.vue";
 import two from "../components/two.vue";
+import three from "../components/three.vue";
 import mixins from "../mixins/mixins.js";
 
 import { mapState, mapActions, mapGetters } from "vuex";
@@ -27,11 +29,13 @@ export default {
   mixins: [mixins],
   components: {
     one,
-    two
+    two,
+    three
   },
   data() {
     return {
-      isShow: true
+      isShow: true,
+      three: "three"
     };
   },
   computed: {
