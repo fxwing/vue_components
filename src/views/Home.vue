@@ -32,10 +32,13 @@ export default {
     two,
     three
   },
+  provide: {
+    parent: 'parent'
+  },
   data() {
     return {
       isShow: true,
-      three: "three"
+      three: "three",
     };
   },
   computed: {
