@@ -27,7 +27,10 @@ export default {
   },
   methods: {
     handleSync() {
-      this.$emit("update:isShow", false);
+      // 通过子组件触发父组件的方法改值
+      // this.$emit("changeShow", false);
+      // 通过updata:isShow
+      this.$emit('update:msg','gaibianTwo')
     }
   }
 };

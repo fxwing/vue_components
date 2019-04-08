@@ -29,8 +29,9 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    changeName({ commit }, name) {
-      commit("changeName", name);
+    changeName({commit,dispatch,state}, name) {
+       console.log('actions的context',state)
+     commit("changeName", state.userInfo.name);
     },
     changeAge({ commit }, age) {
       return new Promise(resolve => {

@@ -34,6 +34,9 @@ export default {
     handleBroClick() {
       // 同级组件通信
       bridge.$emit("oneToTwo", "oneToTwo");
+    },
+    fromHome(data){
+      console.log('这是在父组件触发的方法=',data)
     }
   }
 };
