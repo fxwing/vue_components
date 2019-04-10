@@ -9,4 +9,5 @@
 - provide / inject
 - vuex 全局状态管理 ==> state getter mutation action(异步操作)
 - vue-router 路由传参 守卫
+- vue 利用Object.defineProprety()改变数组下标以及length和新增对象属性不会双向绑定
 - 未完待续 ...
