@@ -1,13 +1,28 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+    <div v-for="(item) in list" :key="item">{{item}}</div>
   </div>
 </template>
-
 <script>
 export default {
+  data(){
+    return{
+      list:[1,2]
+    }
+  },
   created() {
     console.log(this.$route.params.id);
+
+  },
+  mounted(){
+    // Object.defineProperty  不能通过数组下标修改数组  不能监听对象新加属性  只能监听已经声明的
+    const arr=[...this.list]
+    arr[1]=3;
+    this.list=arr;
+    // 测试通过下标修改数组  不可以修改
+    // this.list[1]=3
+    // this.$set(this.list,1,3)
   },
   beforeRouteEnter (to, from, next) {
     console.log(to, from);
